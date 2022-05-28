@@ -15,6 +15,7 @@ class SoundViewController: UIViewController {
     var grabarAudio:AVAudioRecorder?
     var reproducirAudio:AVAudioPlayer?
     var audioURL:URL?
+    var tiempo:Timer = Timer()
     
     //MARK: - Outlets.
     
@@ -26,12 +27,16 @@ class SoundViewController: UIViewController {
     
     @IBOutlet weak var agregarButton: UIButton!
     
+    @IBOutlet weak var TimeTranscurred: UILabel!
+    
     //MARK: - Actions
     
     @IBAction func grabarTapped(_ sender: Any) {
         if grabarAudio!.isRecording{
             //detener la grabacion
             grabarAudio?.stop()
+            //detiene el tiempo
+            tiempo.invalidate()
             //cambiar texto del boton grabar
             grabarButton.setTitle("GRABAR", for: .normal)
             reproducitButton.isEnabled = true
@@ -39,6 +44,8 @@ class SoundViewController: UIViewController {
         } else{
             //empezar a grabar
             grabarAudio?.record()
+            //tiempo en ejecucion
+            tiempo = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(duracion), userInfo: nil, repeats: true)
             //cambiar el texto del boton grabar a detener
             grabarButton.setTitle("DETENER", for: .normal)
             reproducitButton.isEnabled = false
@@ -61,12 +68,28 @@ class SoundViewController: UIViewController {
         let grabacion = Grabacion(context: context)
         grabacion.nombre = nombreTextField.text
         grabacion.audio = NSData(contentsOf: audioURL!)! as Data
+        //nuevo atributo duracion
+        grabacion.duracionAudio = TimeTranscurred.text
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
         
     }
     
     
+    @IBAction func low(_ sender: Any) {
+        reproducirAudio?.stop()
+        reproducirAudio?.volume += 1
+        reproducirAudio?.prepareToPlay()
+        reproducirAudio?.play()
+    }
+    
+    
+    @IBAction func up(_ sender: Any) {
+        reproducirAudio?.stop()
+        reproducirAudio?.volume -= 1
+        reproducirAudio?.prepareToPlay()
+        reproducirAudio?.play()
+    }
     
     
     override func viewDidLoad() {
@@ -109,6 +132,23 @@ class SoundViewController: UIViewController {
         } catch let error as NSError {
             print(error)
         }
+    }
+    
+    //MARK: - Funcion Tiempo
+    
+    @objc func duracion() -> Void{
+        let tiempoDuracion = Int(grabarAudio!.currentTime)
+        let horas = tiempoDuracion / 3600
+        let minutos = (tiempoDuracion % 3600) / 60
+        let segundos = (tiempoDuracion % 3600) % 60
+        var tiempo = ""
+        tiempo += String(format: "%02d", horas)
+        tiempo += ":"
+        tiempo += String(format: "%02d", minutos)
+        tiempo += ":"
+        tiempo += String(format: "%02d", segundos)
+        print(tiempo)
+        TimeTranscurred.text = tiempo
     }
     
 }

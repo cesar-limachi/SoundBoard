@@ -94,21 +94,69 @@
                                     <action selector="agregarTapped:" destination="cE9-j7-plT" eventType="touchUpInside" id="iXS-l4-694"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo Transcurrido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJU-Ub-sPy">
+                                <rect key="frame" x="96.5" y="384" width="221.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DY-kL-aS2">
+                                <rect key="frame" x="177" y="444" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Control de Volumen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgl-Qd-UC5">
+                                <rect key="frame" x="101" y="504" width="212" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.58039215690000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-zM-rW4">
+                                <rect key="frame" x="152" y="591" width="30" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="low:" destination="cE9-j7-plT" eventType="touchUpInside" id="bgm-HI-7aG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7d-ZW-tqP">
+                                <rect key="frame" x="232" y="591" width="30" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="up:" destination="cE9-j7-plT" eventType="touchUpInside" id="OlW-nk-zsD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Zgl-Qd-UC5" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="1lf-ga-4Rc"/>
                             <constraint firstItem="gOb-Wf-fd8" firstAttribute="top" secondItem="HW8-Ws-0B7" secondAttribute="top" constant="20" id="5uS-qH-llc"/>
                             <constraint firstItem="uN4-2d-aiG" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="8Wn-Rh-wo8"/>
+                            <constraint firstItem="aJU-Ub-sPy" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="AD8-0T-s4a"/>
                             <constraint firstItem="Cdy-2x-bve" firstAttribute="leading" secondItem="HW8-Ws-0B7" secondAttribute="leading" constant="20" id="Iha-XS-p68"/>
                             <constraint firstItem="HW8-Ws-0B7" firstAttribute="trailing" secondItem="Cdy-2x-bve" secondAttribute="trailing" constant="20" id="Isc-xb-n7z"/>
                             <constraint firstItem="Cdy-2x-bve" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="OFC-Ay-aj0"/>
                             <constraint firstItem="OVR-va-3Tw" firstAttribute="top" secondItem="gOb-Wf-fd8" secondAttribute="bottom" constant="20" id="Q9s-9x-d4Q"/>
                             <constraint firstItem="gOb-Wf-fd8" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="X2V-Fq-gCe"/>
+                            <constraint firstItem="3DY-kL-aS2" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="Yf9-Yk-xGK"/>
                             <constraint firstItem="Cdy-2x-bve" firstAttribute="top" secondItem="OVR-va-3Tw" secondAttribute="bottom" constant="30" id="gMP-VV-lTz"/>
                             <constraint firstItem="CBP-W8-LBT" firstAttribute="top" secondItem="uN4-2d-aiG" secondAttribute="bottom" constant="20" id="k9d-ZC-Mk9"/>
+                            <constraint firstItem="Zgl-Qd-UC5" firstAttribute="top" secondItem="3DY-kL-aS2" secondAttribute="bottom" constant="30" id="ls1-2V-DHO"/>
                             <constraint firstItem="uN4-2d-aiG" firstAttribute="top" secondItem="Cdy-2x-bve" secondAttribute="bottom" constant="20" id="o0E-un-U4p"/>
+                            <constraint firstItem="aJU-Ub-sPy" firstAttribute="top" secondItem="CBP-W8-LBT" secondAttribute="bottom" constant="30" id="pr1-W8-e2u"/>
                             <constraint firstItem="uN4-2d-aiG" firstAttribute="leading" secondItem="HW8-Ws-0B7" secondAttribute="leading" constant="20" id="ruo-ej-0bA"/>
                             <constraint firstItem="CBP-W8-LBT" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="vhr-Gy-Vlz"/>
+                            <constraint firstItem="3DY-kL-aS2" firstAttribute="top" secondItem="aJU-Ub-sPy" secondAttribute="bottom" constant="30" id="w2m-hj-hoW"/>
                             <constraint firstItem="HW8-Ws-0B7" firstAttribute="trailing" secondItem="uN4-2d-aiG" secondAttribute="trailing" constant="20" id="wtG-UV-BPY"/>
                             <constraint firstItem="OVR-va-3Tw" firstAttribute="centerX" secondItem="4TJ-ZU-Xng" secondAttribute="centerX" id="zaF-ME-Bi6"/>
                         </constraints>
@@ -116,6 +164,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sqN-NO-NkM"/>
                     <connections>
+                        <outlet property="TimeTranscurred" destination="3DY-kL-aS2" id="sfu-3V-MBL"/>
                         <outlet property="agregarButton" destination="CBP-W8-LBT" id="xID-vn-vjS"/>
                         <outlet property="grabarButton" destination="gOb-Wf-fd8" id="pPA-kW-fcZ"/>
                         <outlet property="nombreTextField" destination="uN4-2d-aiG" id="9Lj-JM-T6G"/>
